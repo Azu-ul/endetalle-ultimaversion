@@ -1,0 +1,3 @@
+# Lo genera deploy/build.ps1: no se versiona
+build/
+dist/

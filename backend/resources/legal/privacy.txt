@@ -1,0 +1,53 @@
+Última actualización: {{UPDATED}}
+
+Esta Política de Privacidad explica qué datos personales recopila enDetalle ({{SITE_URL}}), para qué los usamos, con quién los compartimos y qué derechos tenés. Cumplimos con la Ley 25.326 de Protección de los Datos Personales de la República Argentina. El responsable del tratamiento es el equipo de enDetalle; podés contactarnos en {{CONTACT_EMAIL}}.
+
+1. QUÉ DATOS RECOPILAMOS
+- Datos de cuenta: nombre, email y contraseña (guardada de forma cifrada, nunca en texto legible).
+- Datos de perfil opcionales: foto, profesión, empresa, biografía, portfolio y enlaces que decidas cargar. Tu nombre, foto, profesión, empresa, biografía y los detalles que publiques pueden ser visibles en tu perfil público y en el directorio de autores. Tu email nunca se muestra públicamente.
+- Datos de compra: plan elegido, período, importes, fecha y números de operación u orden de Mercado Pago o PayPal. No recibimos ni guardamos los datos de tu tarjeta o cuenta: los procesa directamente el proveedor de pagos.
+- Actividad en el sitio: detalles que guardás en favoritos, "me gusta" y reacciones, comentarios, descargas y solicitudes de reembolso.
+- Mensajes de contacto: lo que nos escribís por el formulario de Contacto o por reportes de error.
+- Datos técnicos y de visitas: para saber cuánta gente usa el sitio registramos las páginas visitadas, la fecha y hora, el tipo de dispositivo y un identificador anónimo guardado en tu navegador. No usamos esta información para identificarte personalmente ni para publicidad.
+- Colaboradores y administración: además, el contenido que cargan y los mensajes privados internos que intercambian entre sí.
+
+2. PARA QUÉ USAMOS TUS DATOS
+- Crear y administrar tu cuenta, verificar tu email y mantener tu sesión segura.
+- Procesar pagos, activar y renovar planes, gestionar reembolsos y enviarte comprobantes.
+- Permitirte usar las funciones del sitio (favoritos, comentarios, descargas, perfil, directorio de autores).
+- Enviarte avisos del servicio: confirmaciones, vencimiento del plan, cambios importantes y avisos que el administrador publique en tu campanita de notificaciones.
+- Responder tus consultas y brindarte soporte.
+- Medir el uso del sitio, mejorar su velocidad y detectar abusos, fraudes o accesos no autorizados.
+- Cumplir obligaciones legales.
+No vendemos tus datos personales ni los usamos para publicidad de terceros.
+
+3. COOKIES Y ALMACENAMIENTO LOCAL
+Usamos solo lo necesario para que el sitio funcione: la cookie de sesión y de seguridad (para mantenerte conectado y proteger tus formularios), un identificador anónimo de visitas y preferencias de la interfaz (por ejemplo, el modo oscuro o el menú lateral). No usamos cookies de publicidad. Podés borrarlas desde tu navegador; algunas funciones (como iniciar sesión) dejarán de andar sin ellas.
+
+4. CON QUIÉN COMPARTIMOS TUS DATOS
+Solo con proveedores que necesitamos para dar el servicio, y únicamente los datos necesarios:
+- Mercado Pago y PayPal, para cobrar y reembolsar.
+- Proveedor de hosting y de correo electrónico, para alojar el sitio y enviarte emails.
+- Autoridades, cuando una ley o una orden judicial lo exijan.
+Algunos de estos proveedores pueden almacenar datos fuera de Argentina, con medidas de seguridad adecuadas. Los demás usuarios solo ven la información pública de tu perfil.
+
+5. CUÁNTO TIEMPO GUARDAMOS LOS DATOS
+- Los datos de tu cuenta, mientras la cuenta esté activa. Si la dás de baja, los eliminamos o anonimizamos, salvo los que debamos conservar por obligaciones legales o contables (por ejemplo, registros de compras).
+- El registro de visitas, por un período limitado (alrededor de 120 días) y luego se elimina.
+- Los mensajes de contacto, el tiempo necesario para atender tu consulta.
+
+6. SEGURIDAD
+Aplicamos medidas técnicas y organizativas razonables: conexión cifrada (HTTPS), contraseñas cifradas, control de acceso por rol, protección contra intentos masivos de ingreso, imágenes y archivos protegidos, y copias de seguridad. Ningún sistema es 100% invulnerable; si detectamos un incidente que afecte tus datos, te avisaremos cuando corresponda. Te pedimos usar una contraseña única y no compartirla.
+
+7. TUS DERECHOS
+Tenés derecho a acceder a tus datos, rectificarlos, actualizarlos y suprimirlos. Podés editar tu perfil desde tu cuenta, o escribirnos a {{CONTACT_EMAIL}} para ejercer cualquiera de estos derechos, que atenderemos dentro de los plazos de la ley. También podés darte de baja de los avisos que no sean esenciales para el servicio.
+El titular de los datos personales tiene la facultad de ejercer el derecho de acceso en forma gratuita a intervalos no inferiores a seis meses (art. 14, inc. 3, Ley 25.326). La Agencia de Acceso a la Información Pública, en su carácter de Órgano de Control de la Ley 25.326, tiene la atribución de atender las denuncias y reclamos que se interpongan con relación al incumplimiento de las normas sobre protección de datos personales.
+
+8. MENORES DE EDAD
+El Servicio no está dirigido a menores de 18 años. Si detectamos una cuenta de un menor sin autorización de su representante legal, la daremos de baja.
+
+9. ENLACES A OTROS SITIOS
+El sitio puede incluir enlaces a páginas de terceros (por ejemplo, redes sociales o portfolios de autores). No controlamos sus políticas de privacidad y te recomendamos leerlas.
+
+10. CAMBIOS EN ESTA POLÍTICA
+Podemos actualizar esta política. Publicaremos la versión vigente con su fecha y, si el cambio es importante, te avisaremos por email o dentro del sitio.

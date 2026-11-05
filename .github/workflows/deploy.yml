@@ -1,0 +1,121 @@
+name: Deploy a Hostinger
+
+on:
+  push:
+    branches: [rebuild]   # cuando esté probado, cambiar a [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-endetalle
+  cancel-in-progress: false
+
+env:
+  API_URL: https://api.endetalle.com.ar
+  REMOTE_BACKEND: /home/u648951011/endetalle/backend
+  REMOTE_SITE: /home/u648951011/domains/endetalle.com.ar/public_html
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer:v2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Copiar el backend (sin tests, .env ni logs)
+        run: |
+          mkdir -p deploy/build/backend deploy/build/frontend
+          rsync -a \
+            --exclude='vendor/' --exclude='node_modules/' --exclude='tests/' --exclude='.git/' \
+            --exclude='.idea/' --exclude='.vscode/' --exclude='.phpunit.cache/' --exclude='.cursor/' \
+            --exclude='.codex/' --exclude='docs/' --exclude='public/storage/' --exclude='storage/logs/' \
+            --exclude='.env' --exclude='.env.backup' --exclude='.env.production' --exclude='phpunit.xml' \
+            --exclude='*.log' --exclude='*.sqlite' --exclude='auth.json' \
+            backend/ deploy/build/backend/
+          mkdir -p deploy/build/backend/storage/logs \
+                   deploy/build/backend/storage/framework/cache/data \
+                   deploy/build/backend/storage/framework/sessions \
+                   deploy/build/backend/storage/framework/views
+
+      - name: Instalar dependencias de PHP (sin las de desarrollo)
+        working-directory: deploy/build/backend
+        run: |
+          composer config platform.php 8.3.0 --no-interaction
+          composer update --lock --no-interaction
+          composer install --no-dev --optimize-autoloader --no-interaction
+          APP_ENV=production php artisan route:cache
+          rm -f bootstrap/cache/config.php bootstrap/cache/events.php
+          sed -i 's/\r$//' public/.htaccess
+
+      - name: Compilar el sitio (frontend)
+        working-directory: frontend
+        env:
+          VITE_API_URL: ${{ env.API_URL }}
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+          npx vite build --outDir ../deploy/build/frontend --emptyOutDir
+
+      - name: Agregar .htaccess y revisar el sitio compilado
+        run: |
+          sed 's/\r$//' deploy/templates/frontend.htaccess > deploy/build/frontend/.htaccess
+          sed 's/\r$//' deploy/templates/assets.htaccess > deploy/build/frontend/assets/.htaccess
+          test -f deploy/build/frontend/index.html
+          grep -rqF "$API_URL" deploy/build/frontend/assets
+          if grep -rEq 'localhost:8000|127\.0\.0\.1:8000' deploy/build/frontend/assets; then echo "El sitio apunta a localhost"; exit 1; fi
+          if grep -rEq 'APP_USR-[0-9]|TEST-[0-9a-f]{16}|sk_live_|BEGIN (RSA |EC )?PRIVATE KEY|PAYPAL_SECRET|MERCADOPAGO_ACCESS_TOKEN' deploy/build/frontend/assets; then echo "Hay algo que parece una clave"; exit 1; fi
+
+      - name: Preparar la conexión SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts
+
+      - name: Subir la API (sin tocar .env ni storage)
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          rsync -rlptz --delete --chmod=D755,F644 \
+            -e "ssh -i $HOME/.ssh/deploy_key -p $SSH_PORT" \
+            --exclude='/.env' --exclude='/storage/' --exclude='/public/storage/' \
+            deploy/build/backend/ "$SSH_USER@$SSH_HOST:$REMOTE_BACKEND/"
+
+      - name: Subir el sitio (sin tocar la carpeta home de la API)
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          SSH="ssh -i $HOME/.ssh/deploy_key -p $SSH_PORT"
+          rsync -rlptz --chmod=D755,F644 -e "$SSH" \
+            --exclude='/home/' --exclude='/.well-known/' \
+            deploy/build/frontend/ "$SSH_USER@$SSH_HOST:$REMOTE_SITE/"
+          rsync -rlptz --delete --chmod=D755,F644 -e "$SSH" \
+            deploy/build/frontend/assets/ "$SSH_USER@$SSH_HOST:$REMOTE_SITE/assets/"
+
+      - name: Actualizar la base y limpiar cachés
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          PHP=/opt/alt/php83/usr/bin/php
+          ssh -i "$HOME/.ssh/deploy_key" -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
+            "cd $REMOTE_BACKEND && $PHP artisan migrate --force && $PHP artisan config:clear && $PHP artisan view:clear"
+
+      - name: Comprobar que la API responde
+        run: curl -fsS --retry 3 --retry-delay 5 "$API_URL/api/health"

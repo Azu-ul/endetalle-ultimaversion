@@ -1,0 +1,58 @@
+Última actualización: {{UPDATED}}
+
+Estos Términos de Uso regulan el acceso y el uso de enDetalle ({{SITE_URL}}), una biblioteca colaborativa de detalles constructivos para arquitectos, ingenieros, estudiantes y profesionales de la construcción (el "Servicio"). Al registrarte, navegar o comprar un plan aceptás estos términos. Si no estás de acuerdo, no uses el Servicio.
+
+1. QUIÉNES SOMOS Y CÓMO CONTACTARNOS
+El Servicio es operado por el equipo de enDetalle (el "Sitio", "nosotros"). Podés escribirnos desde la sección Contacto o a {{CONTACT_EMAIL}}.
+
+2. TU CUENTA
+- Para usar ciertas funciones (comentar, dar "me gusta", guardar favoritos, descargar, comprar un plan) necesitás una cuenta con un email válido, que debés verificar.
+- Tenés que ser mayor de 18 años o contar con la autorización de tu representante legal.
+- Sos responsable de la confidencialidad de tu contraseña y de lo que ocurra desde tu cuenta. Si sospechás un uso no autorizado, cambiá la contraseña y avisanos.
+- La información de tu perfil debe ser veraz. Podemos suspender cuentas con datos falsos o que incumplan estos términos.
+
+3. TIPOS DE USUARIO Y PLANES
+- Visitantes: pueden navegar el catálogo y abrir los detalles marcados como públicos, sin cuenta.
+- Usuarios registrados: acceden a más contenido según su plan. El plan Free es gratuito y tiene límites; los planes pagos (por ejemplo Estudiante y Pro) amplían el acceso y habilitan las descargas, según lo que se detalle en la página de Planes.
+- Colaboradores: usuarios autorizados por el administrador para publicar detalles. Su contenido pasa por revisión antes de publicarse.
+- Administración: gestiona el sitio, los contenidos, los usuarios y los pagos.
+Las características, precios y límites de cada plan son los que se muestran en la página de Planes al momento de la compra.
+
+4. PAGOS, VIGENCIA Y RENOVACIÓN
+- Los pagos se procesan a través de Mercado Pago y/o PayPal. No recibimos ni guardamos los datos de tu tarjeta: los maneja el procesador de pagos bajo sus propios términos.
+- Cada compra habilita el plan por el período elegido (mensual, trimestral, anual u otro que se ofrezca). La suscripción no se renueva automáticamente: antes del vencimiento te avisamos por email y podés renovar desde el sitio; los meses se suman al final de tu plan vigente.
+- Los precios pueden expresarse en pesos argentinos o en dólares, según el medio de pago. Pueden cambiar para compras futuras, sin afectar a un plan ya pagado.
+- Al vencer el plan, tu cuenta vuelve al nivel Free; no se borran tu cuenta ni tus favoritos.
+
+5. ARREPENTIMIENTO Y REEMBOLSOS
+Conforme a la Ley 24.240 de Defensa del Consumidor, podés arrepentirte de tu compra. Dentro de los {{REFUND_DAYS}} días corridos desde la fecha de pago podés pedir el reembolso desde tu cuenta (sección de reembolsos, "botón de arrepentimiento"). La solicitud la revisa el administrador y, si se aprueba, el reembolso se hace por el mismo medio de pago y el plan correspondiente se da de baja. Cada compra se evalúa por separado. Pasado ese plazo no corresponde reembolso, salvo que la ley disponga otra cosa. Revisá también tu carpeta de Spam: la respuesta llega por email.
+
+6. CONTENIDO DEL SITIO Y PROPIEDAD INTELECTUAL
+- Los detalles constructivos, imágenes, planos, archivos (DWG, SKP u otros), textos, diseños y la marca enDetalle están protegidos por la Ley 11.723 de Propiedad Intelectual y normas concordantes. Pertenecen a sus autores o al Sitio, según corresponda.
+- Al comprar un plan recibís una licencia personal, limitada, no exclusiva e intransferible para usar el contenido descargado en tus proyectos profesionales o de estudio.
+- No está permitido: revender, redistribuir, publicar o compartir los archivos y las imágenes (ni siquiera parcialmente) fuera de los proyectos para los que se usan; ofrecerlos en otros sitios, bibliotecas o repositorios; ni usarlos para entrenar sistemas de inteligencia artificial.
+- Las imágenes del catálogo están protegidas: no se pueden descargar ni copiar con medios técnicos ajenos al Sitio. Intentar evadir estas protecciones, hacer scraping automatizado o extraer el catálogo de forma masiva es una infracción y puede dar lugar a la suspensión de la cuenta y a acciones legales.
+
+7. CONTENIDO QUE APORTAN LOS COLABORADORES
+- Quien publica un detalle declara que es el autor o que tiene los derechos para hacerlo, y que no infringe derechos de terceros ni incluye información confidencial de clientes u obras.
+- El colaborador conserva la titularidad de su obra y nos otorga una licencia no exclusiva, para mostrarla, almacenarla, adaptarla técnicamente (por ejemplo, redimensionarla y comprimirla) y distribuirla a los usuarios con acceso mientras esté publicada en el Sitio.
+- Podemos rechazar, editar, despublicar o eliminar contenido que incumpla estos términos, la ley o los estándares técnicos del Sitio.
+- Si creés que un contenido infringe tus derechos, escribinos a {{CONTACT_EMAIL}} indicando qué es, dónde está y por qué; lo revisaremos a la brevedad.
+
+8. USO ACEPTABLE, COMENTARIOS Y MENSAJES
+Te comprometés a no: publicar contenido ilegal, ofensivo, discriminatorio, engañoso o spam; suplantar a otras personas; acosar a otros usuarios; intentar acceder a cuentas, datos o áreas que no te corresponden; vulnerar, probar o sobrecargar la seguridad del Sitio; ni usar el Servicio con fines ilícitos. Los comentarios son públicos para quienes pueden ver el detalle y podemos moderarlos o eliminarlos. Los mensajes privados internos son una herramienta de trabajo del equipo (colaboradores y administración) y su uso está sujeto a las mismas reglas.
+
+9. CARÁCTER INFORMATIVO DE LOS DETALLES
+Los detalles constructivos tienen carácter orientativo y de referencia técnica. No reemplazan el criterio, el cálculo ni la responsabilidad de un profesional matriculado, ni el cumplimiento de la normativa y los reglamentos aplicables en cada obra. Cada usuario es responsable de verificar que el detalle sea adecuado para su proyecto antes de usarlo.
+
+10. DISPONIBILIDAD Y LÍMITE DE RESPONSABILIDAD
+Hacemos lo razonable para que el Servicio esté disponible y funcione bien, pero no garantizamos que sea ininterrumpido ni libre de errores; puede haber mantenimientos o fallas de terceros (hosting, pagos, correo). En la medida permitida por la ley, no respondemos por daños indirectos, lucro cesante ni por decisiones técnicas o económicas tomadas a partir del contenido. Nada de esto limita los derechos que la Ley 24.240 te reconoce como consumidor.
+
+11. SUSPENSIÓN Y BAJA
+Podemos suspender o dar de baja cuentas que incumplan estos términos, con aviso cuando sea posible. Vos podés pedir la baja de tu cuenta en cualquier momento escribiéndonos a {{CONTACT_EMAIL}}. La baja no genera reembolsos fuera de lo previsto en la sección 5.
+
+12. CAMBIOS EN LOS TÉRMINOS
+Podemos actualizar estos términos. Publicaremos la versión vigente con su fecha de actualización y, si el cambio es importante, te lo avisaremos por email o dentro del sitio. Si seguís usando el Servicio después del cambio, se entiende que lo aceptás.
+
+13. LEY APLICABLE Y JURISDICCIÓN
+Estos términos se rigen por las leyes de la República Argentina. Para cualquier controversia, y sin perjuicio de los derechos que la ley otorga al consumidor de elegir el tribunal de su domicilio, serán competentes los tribunales ordinarios de la República Argentina.

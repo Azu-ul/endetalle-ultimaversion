@@ -1,0 +1,5 @@
+# Los archivos de assets llevan un código en el nombre (index-a1b2c3.js): cuando cambian, cambia el nombre.
+# Por eso el navegador los puede guardar un año.
+<IfModule mod_headers.c>
+    Header set Cache-Control "public, max-age=31536000, immutable"
+</IfModule>

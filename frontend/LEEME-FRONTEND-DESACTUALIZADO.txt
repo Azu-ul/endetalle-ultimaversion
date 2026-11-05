@@ -1,0 +1,9 @@
+ATENCION - ESTE FRONTEND ES VIEJO (hasta "Bloque 11", antes del CMS v2.0.0).
+
+No tiene: Me gusta/No me gusta, detalles publicos, programacion, avisos, carrusel,
+visitas/online, etiquetas, imagenes protegidas, mensajeria real del equipo, terminos y
+privacidad. Todo eso SI esta en el sitio publicado, pero su codigo fuente (React/TypeScript)
+no estaba en ninguno de los zips: solo existe compilado en ../compilado-v2.1.0/
+
+NO compiles esta carpeta y la subas al servidor: pisarias el sitio actual con la version vieja.
+El backend de ../backend si esta en v2.1.0 (CMS 2.1.0).

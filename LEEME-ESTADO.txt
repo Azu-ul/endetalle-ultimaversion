@@ -1,0 +1,13 @@
+enDetalle - proyecto consolidado al 5/11/2026 (CMS v2.1.0, actualizacion 8)
+
+backend/            Laravel en v2.1.0 (igual al codigo que esta en el cPanel). Sin vendor ni .env.
+frontend/           FUENTE VIEJA (pre v2.0.0). Ver frontend/LEEME-FRONTEND-DESACTUALIZADO.txt
+compilado-v2.1.0/   Frontend compilado que esta publicado hoy (spa/index.html + public/assets).
+deploy/, _herramientas-de-prueba/, CLAUDE.md, README.md   como estaban.
+CONTEXTO-PROYECTO.md   contexto para un chat nuevo (actualizado).
+
+Para trabajar en VS Code:
+  backend:   cd backend && composer install && cp .env.example .env && php artisan key:generate
+  frontend:  cd frontend && npm install
+
+Faltan (nunca estuvieron en los zips): fuente del frontend v2.x y los tests CmsV2Test / StaffMessagesTest.

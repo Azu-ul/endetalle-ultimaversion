@@ -1,0 +1,6 @@
+import{c as t,j as e}from"./index-EBbI5TT-.js";import"./vendor-Cj8varNF.js";/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const d=[["path",{d:"M12 3v18",key:"108xh3"}],["path",{d:"m19 8 3 8a5 5 0 0 1-6 0zV7",key:"zcdpyk"}],["path",{d:"M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1",key:"1yorad"}],["path",{d:"m5 8 3 8a5 5 0 0 1-6 0zV7",key:"eua70x"}],["path",{d:"M7 21h10",key:"1b0cd5"}]],s=t("scale",d),l=({title:a,content:r})=>e.jsxs("div",{className:"max-w-4xl mx-auto px-6 py-16 animate-in fade-in duration-500",children:[e.jsxs("div",{className:"flex items-center gap-3 mb-8",children:[e.jsx("div",{className:"p-3 bg-primary-400/20 text-primary-600 dark:text-primary-400 rounded-xl",children:e.jsx(s,{size:28})}),e.jsx("h1",{className:"text-3xl md:text-4xl font-bold text-slate-900 dark:text-white",children:a})]}),e.jsx("div",{className:"bg-white dark:bg-dark-surface p-8 md:p-12 rounded-3xl border border-slate-200 dark:border-dark-border shadow-sm",children:e.jsx("div",{className:"prose dark:prose-invert max-w-none whitespace-pre-line text-slate-600 dark:text-slate-300",children:r})})]});export{l as default};

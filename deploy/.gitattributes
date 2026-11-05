@@ -1,0 +1,5 @@
+# Lo que se sube al hosting va siempre con saltos de linea LF (un .htaccess con CRLF puede dar error 500 en Apache)
+*.htaccess text eol=lf
+*.sql text eol=lf
+*.md text eol=lf
+*.ps1 text eol=crlf

@@ -1,0 +1,71 @@
+# enDetalle API: carpeta pública de Laravel.
+# El dominio de la API (por ejemplo api.midominio.com.ar) tiene que apuntar a esta carpeta (backend/public).
+# .env, storage, vendor, app y config quedan UN NIVEL ARRIBA, fuera de lo que se publica en internet.
+#
+# No se usan directivas php_flag/php_value: dan error 500 en los hostings que corren PHP como FastCGI/CGI.
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Siempre por HTTPS (el hosting da el certificado SSL gratis).
+    # Se deja pasar /.well-known para que la renovación automática del certificado pueda validar el dominio.
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+    RewriteCond %{REQUEST_URI} !^/\.well-known/
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Handle X-XSRF-Token Header
+    RewriteCond %{HTTP:x-xsrf-token} .
+    RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_URI} !^/\.well-known/
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Nunca se sirven archivos ocultos (.env, .git, .htaccess) ni copias, bases o logs que alguien suba por error
+<IfModule mod_authz_core.c>
+    <FilesMatch "^\.(?!well-known)">
+        Require all denied
+    </FilesMatch>
+    <FilesMatch "\.(env|sql|log|bak|old|orig|swp|ini|sh|lock)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
+# Cabeceras de seguridad básicas
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Strict-Transport-Security "max-age=31536000"
+    Header unset X-Powered-By
+</IfModule>
+
+# Compresión del texto que viaja por la red (HTML, CSS, JS, JSON, SVG): las páginas pesan 3 a 5 veces menos
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/json application/xml image/svg+xml
+</IfModule>
+
+# Íconos y archivos fijos de la raíz: el navegador los guarda un día (los de /assets y /storage tienen su propia regla)
+<IfModule mod_headers.c>
+    <FilesMatch "\.(ico|png|svg|webmanifest)$">
+        Header set Cache-Control "public, max-age=86400"
+    </FilesMatch>
+</IfModule>

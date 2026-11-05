@@ -1,0 +1,11 @@
+# Carpeta de imágenes públicas (portadas, láminas y avatares). Solo se sirven imágenes:
+# no se ejecuta ningún script desde acá aunque alguien lograra subir uno.
+Options -Indexes -ExecCGI
+<IfModule mod_authz_core.c>
+    <FilesMatch "\.(php|phtml|phar|php[0-9]|pl|py|cgi|sh|htaccess)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
